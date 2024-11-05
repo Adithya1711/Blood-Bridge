@@ -2,11 +2,16 @@
 
 ## DB Setup
 CREATE DATABASE bloodbridge;
+
 USE bloodbridge;
 
+
 CREATE USER 'DBAdmin'@'localhost' IDENTIFIED BY 'bloodbridge';
+
 GRANT SELECT, INSERT, UPDATE, DELETE ON bloodbridge.* TO 'DBAdmin'@'localhost';
+
 FLUSH PRIVILEGES;
+
 
 CREATE TABLE register (
          id INT AUTO_INCREMENT PRIMARY KEY,

@@ -14,6 +14,13 @@ db_config = {
     'database': 'bloodbridge'
 }
 
+# db_config = {
+#     'host': 'YOUR_RDS_ENDPOINT',
+#     'user': 'YOUR_RDS_MASTER_USERNAME',
+#     'password': 'YOUR_RDS_MASTER_PASSWORD',
+#     'database': 'YOUR_RDS_DB_NAME'
+# }
+
 # Create a connection pool
 cnxpool = MySQLConnectionPool(
     pool_name="mypool",
@@ -249,4 +256,4 @@ def donate_blood(request_id, requester_id):
     return redirect(url_for('dashboard'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
